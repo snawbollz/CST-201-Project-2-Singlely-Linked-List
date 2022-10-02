@@ -91,6 +91,55 @@ void insertVal(int newData) {
 	temp->next = newNode;
 }
 
+void pop_front() {
+	struct node* temp;
+	temp = head;
+
+	deleteNode(temp->data);
+}
+
+void pop_back() {
+
+}
+
+void empty() {
+	struct node* temp;
+	temp = head;
+
+	if (temp->next != NULL) {
+		cout << "List is not empty." << endl;
+	}
+	else {
+		cout << "List is empty." << endl;
+	}
+}
+
+void size() {
+	struct node* temp;
+	temp = head;
+	int size = 0;
+
+	while (temp->data != NULL) {
+		temp = temp->next;
+		size++;
+	}
+	cout << "Size = " << size << endl;
+}
+
+void reverse() {
+	struct node* temp;
+	temp = head;
+	while (temp != NULL) {
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+void merge() {
+
+}
+
 void display() {
 	struct node* temp;
 	temp = head;
@@ -112,10 +161,26 @@ int main() {
 	display();
 	front();
 	back();
+	
+
 	insertVal(25);
+	display();
+
+	empty();
+	//size();
+	//reverse();
+	//merge();
 
 	deleteNode(30);
 	display();
+	//pop_front();
+	display();
+	//pop_back();
+	display();
+
+	
+
+
 
 	return 0;
 }
